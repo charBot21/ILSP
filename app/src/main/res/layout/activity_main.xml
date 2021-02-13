@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="home"
+            type="com.carlostorres.ilsp.ui.viewmodel.NumbersVM" />
+    </data>
+
+
+    <RelativeLayout
+        android:id="@+id/homeVM"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.view.MainActivity">
+
+        <LinearLayout
+            android:id="@+id/llSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:paddingTop="@dimen/nano_padding"
+            android:paddingStart="@dimen/small_padding"
+            android:paddingEnd="@dimen/small_padding"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/title_search"
+                android:layout_margin="@dimen/small_padding"/>
+
+            <EditText
+                android:id="@+id/etStart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/GeneralBGTheme"
+                android:hint="@string/enter_start"
+                android:textColorHint="@color/general_gray"
+                android:inputType="number"
+                android:text="@={home.startNumber}"
+                android:layout_marginBottom="@dimen/small_padding"/>
+
+            <EditText
+                android:id="@+id/etEnd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/GeneralBGTheme"
+                android:hint="@string/enter_end"
+                android:textColorHint="@color/general_gray"
+                android:inputType="number"
+                android:text="@={home.endNumber}"
+                android:layout_marginBottom="@dimen/small_padding"/>
+
+            <Button
+                android:id="@+id/btnSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/btnBGTheme"
+                android:textColor="@color/white"
+                android:text="@string/search_value"
+                android:onClick="@{home::validateData}"/>
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvLista"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/llSearch"
+            tools:listitem="@layout/items_rv" />
+
+        <ProgressBar
+            android:id="@+id/pbHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </RelativeLayout>
+
+</layout>

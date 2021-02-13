@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:paddingBottom="@dimen/nano_padding"
+    android:paddingEnd="@dimen/nano_padding"
+    android:paddingStart="@dimen/nano_padding"
+    android:paddingTop="@dimen/nano_padding" >
+
+    <item>
+        <shape>
+            <solid
+                android:color="@color/white_blur"/>
+
+            <corners
+                android:radius="@dimen/nano_padding" />
+        </shape>
+    </item>
+
+</layer-list>

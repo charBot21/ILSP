@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">ILSP</string>
+    
+    <!-- Texts -->
+    <string name="title_search">Búsqueda de números primos</string>
+    <string name="enter_start">Ingresa el inicio</string>
+    <string name="enter_end">Ingresa el final</string>
+    <string name="title_card">Número</string>
+
+    <!-- Buttons -->
+    <string name="search_value">Buscar</string>
+
+    <!-- Error message -->
+    <string name="error_connection">Hubo un error al conectar con el servicio</string>
+    <string name="error_data_input">Por favor, verifica los datos ingresados.</string>
+    <string name="error_invalid_numbers">El número final no puede ser mayor al inicial.</string>
+    <string name="error_number_mayor">El número no puede ser mayor a 200. </string>
+</resources>
